@@ -2,14 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.ts",
+      "src": "src/app.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/index.ts"
+      "dest": "src/app.ts",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://inboxintel-frontend-51u0voxdl-varzandehfarbods-projects.vercel.app",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+      }
     }
   ],
   "env": {
